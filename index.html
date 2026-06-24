@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tap the Jerry Can — Prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Tap the Jerry Can</h1>
+    <div class="hud">
+      <div>Score: <span id="score">0</span></div>
+      <div id="timer">60</div>
+    </div>
+  </header>
+
+  <main>
+    <div class="controls">
+      <label>
+        <input type="checkbox" id="obstacles" checked>
+        Obstacles
+      </label>
+      <label>
+        Time (sec):
+        <input id="timeInput" type="number" min="10" max="300" value="60">
+      </label>
+      <button id="startBtn">Start Game</button>
+    </div>
+
+    <section id="gameArea" class="game-area">
+      <div id="message" class="message"></div>
+    </section>
+  </main>
+
+  <footer class="footnote">
+    Tap jerry cans to earn points. Avoid broken pipes. Milestones unlock messages.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

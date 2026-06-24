@@ -1,0 +1,35 @@
+:root{
+  --bg:#0f1724;
+  --panel:#0b1b2b;
+  --accent:#00c2ff;
+  --good:#2ecc71;
+  --bad:#ff6b6b;
+  --muted:#94a3b8;
+}
+*{box-sizing:border-box;font-family:Inter,system-ui,Arial,sans-serif}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#072233);color:#e6eef6}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:rgba(255,255,255,0.03);backdrop-filter:blur(4px)}
+.topbar h1{font-size:1.1rem;margin:0}
+.hud{display:flex;gap:16px;align-items:center;font-weight:600}
+.controls{display:flex;gap:12px;align-items:center;padding:12px 18px}
+button{background:var(--accent);border:none;padding:8px 12px;border-radius:8px;color:#012133;font-weight:700;cursor:pointer}
+button:active{transform:translateY(1px)}
+.game-area{position:relative;margin:18px auto;border-radius:12px;background:linear-gradient(180deg,#082433, #04111a);width:min(960px,94vw);height:min(640px,70vh);box-shadow:0 8px 30px rgba(0,0,0,0.6);overflow:hidden}
+.message{position:absolute;left:50%;top:8px;transform:translateX(-50%);padding:8px 12px;border-radius:8px;background:rgba(0,0,0,0.5);color:var(--accent);font-weight:700;pointer-events:none}
+.footnote{padding:12px 18px;color:var(--muted);font-size:0.9rem}
+
+.can{
+  position:absolute;display:flex;align-items:center;justify-content:center;width:88px;height:88px;border-radius:10px;cursor:pointer;user-select:none;
+  transform:scale(0);opacity:0;transition:transform 120ms ease,opacity 120ms ease;
+  box-shadow:0 6px 18px rgba(2,6,23,0.6);
+}
+.can.show{transform:scale(1);opacity:1}
+.can .label{font-weight:800}
+.can.good{background:linear-gradient(180deg,#00a86b,#04784f);color:#eafff2}
+.can.bad{background:linear-gradient(180deg,#ff8a8a,#cc4b4b);color:#330000}
+.can.mud{background:linear-gradient(180deg,#5fb0ff,#2a7ab6);color:#04142b}
+
+/* small pop animation when tapped */
+.can.tap-feedback{transform:scale(0.88);transition:transform 80ms ease}
+
+@media (max-width:520px){.can{width:72px;height:72px}}
